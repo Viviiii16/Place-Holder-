@@ -1,0 +1,9 @@
+# Files NOT uploaded to Google Cloud when deploying
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.git/
+.DS_Store
+*.log

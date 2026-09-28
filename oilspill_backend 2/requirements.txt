@@ -1,0 +1,22 @@
+fastapi
+uvicorn[standard]
+python-multipart
+segmentation-models-pytorch>=0.4
+rasterio
+shapely
+pyproj
+scipy
+opencv-python-headless
+pillow
+numpy
+huggingface_hub
+# attribution pipeline
+pandas
+xarray
+netcdf4
+contourpy
+duckdb
+matplotlib
+cdsapi>=0.7.2
+copernicusmarine>=2.0
+python-dotenv
