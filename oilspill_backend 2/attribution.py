@@ -696,6 +696,15 @@ def run_attribution(slick_geojson: dict, t0: Optional[pd.Timestamp] = None, t0_s
         ais_summary["flaggedVessels"] = int(vh[vh.inside_envelope].mmsi.nunique())
 
         # ------------------------------------------------------------ 6. scoring (Cell 8)
+        # New code starts
+        flagged_ids = vh.loc[
+            vh["inside_envelope"], "mmsi"
+        ].unique()
+
+        vh = vh[
+            vh["mmsi"].isin(flagged_ids)
+        ].copy()
+        # New code ends
         step(6, STAGES[5])
         vh = vh.merge(env_df[["hourBack", "centroidLon", "centroidLat", "areaKm2"]]
                       .rename(columns={"hourBack": "hour_back"}), on="hour_back", how="left")
